@@ -5,10 +5,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body {
     @apply text-ink-muted antialiased;
     background-color: #f0e8dd;
+    overflow-x: hidden;
   }
   h1,
   h2,

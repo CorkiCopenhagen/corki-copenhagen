@@ -66,7 +66,7 @@ export default function PreorderPopup() {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 z-[80] w-[calc(100vw-2rem)] max-w-sm rounded-2xl border border-cork-dark/15 bg-sand-50 p-5 shadow-[0_18px_40px_rgba(61,52,41,0.24)] sm:bottom-6 sm:right-6 sm:p-6">
+    <div className="fixed bottom-4 left-4 right-4 z-[80] max-w-sm rounded-2xl border border-cork-dark/15 bg-sand-50 p-5 shadow-[0_18px_40px_rgba(61,52,41,0.24)] sm:bottom-6 sm:left-auto sm:right-6 sm:p-6">
       <button
         type="button"
         onClick={() => {
