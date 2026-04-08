@@ -122,7 +122,7 @@ export default function ProductPage({ product }) {
     <div className="min-h-screen bg-[#f0e8dd] text-ink">
       <Header />
 
-      <main className="mx-auto max-w-6xl px-5 pb-20 pt-8 sm:px-8 sm:pb-28 sm:pt-10">
+      <main className="mx-auto max-w-6xl px-4 pb-20 pt-8 sm:px-8 sm:pb-28 sm:pt-10">
         <section className="mb-5">
           <p className="text-xs text-ink-muted">
             <a href="/" className="transition hover:text-cork-dark">Forside</a>
@@ -242,7 +242,7 @@ export default function ProductPage({ product }) {
             </div>
 
             <div className="border-t border-cork-dark/10 pt-4">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <div className="inline-flex items-center rounded-lg border border-cork-dark/12 bg-sand-50/70">
                   <button
                     type="button"
@@ -267,7 +267,7 @@ export default function ProductPage({ product }) {
                 <button
                   type="button"
                   onClick={openPopup}
-                  className="inline-flex flex-1 items-center justify-center rounded-lg bg-cork-dark px-5 py-2.5 text-sm font-medium text-sand-50 transition hover:bg-cork-dark/92"
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-cork-dark px-5 py-2.5 text-sm font-medium text-sand-50 transition hover:bg-cork-dark/92 sm:flex-1"
                 >
                   Læg i kurv
                 </button>
@@ -282,7 +282,7 @@ export default function ProductPage({ product }) {
 
             <div className="border-t border-cork-dark/10 pt-4">
               <h2 className="font-display text-2xl text-ink">Beskrivelse</h2>
-              <ul className="mt-4 space-y-2.5 text-[0.98rem] text-ink-muted">
+              <ul className="mt-4 space-y-2.5 break-words text-[0.98rem] text-ink-muted">
                 {product.usps.map((usp) => (
                   <li key={usp} className="flex gap-3">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cork-dark/60" aria-hidden />
@@ -290,7 +290,7 @@ export default function ProductPage({ product }) {
                   </li>
                 ))}
               </ul>
-              <p className="mt-5 text-[0.98rem] leading-relaxed text-ink-muted">
+              <p className="mt-5 break-words text-[0.98rem] leading-relaxed text-ink-muted">
                 {product.description}
               </p>
             </div>
