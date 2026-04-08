@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { products } from "../data/products";
+import { submitPreorderForm } from "../lib/netlifyForms";
 
 /** Produkt- og detaljebilleder først, miljøbillede (hoverImage) altid sidst. */
 function orderProductGallery(product) {
@@ -85,10 +86,16 @@ export default function ProductPage({ product }) {
     setEmailTouched(false);
   }
 
-  function submitPopup(e) {
+  async function submitPopup(e) {
     e.preventDefault();
     setEmailTouched(true);
     if (!name.trim() || !emailOk(email)) return;
+    await submitPreorderForm({
+      name: name.trim(),
+      email: email.trim(),
+      source: "product-popup",
+      productInterest: product.title,
+    });
     setPopupSubmitted(true);
   }
 

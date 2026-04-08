@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { submitPreorderForm } from "../lib/netlifyForms";
 
 const emailOk = (value) =>
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
@@ -17,10 +18,16 @@ export default function Waitlist() {
 
   const invalid = touched && (!name.trim() || !emailOk(email));
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     setTouched(true);
     if (!name.trim() || !emailOk(email)) return;
+    await submitPreorderForm({
+      name: name.trim(),
+      email: email.trim(),
+      source: "waitlist-section",
+      productInterest: "generel interesse",
+    });
     setSubmitted(true);
   }
 
