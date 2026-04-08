@@ -269,7 +269,7 @@ export default function ProductPage({ product }) {
                   onClick={openPopup}
                   className="inline-flex w-full items-center justify-center rounded-lg bg-cork-dark px-5 py-2.5 text-sm font-medium text-sand-50 transition hover:bg-cork-dark/92 sm:flex-1"
                 >
-                  Læg i kurv
+                  Skriv dig op
                 </button>
               </div>
             </div>
